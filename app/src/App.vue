@@ -12,8 +12,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink to="/">home       </RouterLink>
-        <RouterLink to="/about">charts      </RouterLink>
-        <RouterLink to="/test">test     </RouterLink>
+        <RouterLink to="/brooklyn">brooklyn      </RouterLink>
+        <RouterLink to="/test">queens     </RouterLink>
+        <RouterLink to="/test">bronx     </RouterLink>
+        <RouterLink to="/test">manhattan     </RouterLink>
+        <RouterLink to="/test">staten island     </RouterLink>
       </nav>
     </div>
   </header>
