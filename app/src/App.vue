@@ -16,6 +16,9 @@ async function fetchData(api) {
   }
 }
 fetchData(api);
+
+
+
 </script>
 
 <template>
