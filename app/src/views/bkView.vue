@@ -7,22 +7,39 @@
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Doughnut } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+// Register the necessary components in Chart.js
+ChartJS.register(Title, Tooltip, Legend, ArcElement)
 
 export default {
-  name: 'BarChart',
-  components: { Bar },
+  components: {
+    Doughnut
+  },
   data() {
     return {
+      // Data for the Doughnut chart
       chartData: {
-        labels: [ 'January', 'February', 'March' ],
-        datasets: [ { data: [40, 20, 12] } ]
+        labels: ['Red', 'Blue', 'Yellow'], // Labels for segments
+        datasets: [
+          {
+            data: [300, 50, 100], // Data values for the chart
+            backgroundColor: ['#FF5733', '#3498DB', '#F1C40F'], // Colors for segments
+            hoverBackgroundColor: ['#FF6347', '#5DADE2', '#F39C12']
+          }
+        ]
       },
       chartOptions: {
-        responsive: true
+        responsive: true, // Make it responsive
+        plugins: {
+          legend: {
+            position: 'top', // Position of the legend
+          },
+          tooltip: {
+            enabled: true // Enable tooltips
+          }
+        }
       }
     }
   }
