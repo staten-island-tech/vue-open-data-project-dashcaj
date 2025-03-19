@@ -1,43 +1,48 @@
 <template>
-  <Bar
-    id="my-chart-id"
-    :options="chartOptions"
-    :data="chartData"
-  />
+  <div>
+    <PieChart :data="chartData" :options="chartOptions" />
+  </div>
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js'
+import { Pie } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale } from 'chart.js'
 
-// Register the necessary components in Chart.js
-ChartJS.register(Title, Tooltip, Legend, ArcElement)
+// Register the necessary components with Chart.js
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale)
 
 export default {
   components: {
-    Doughnut
+    PieChart: Pie
   },
   data() {
     return {
-      // Data for the Doughnut chart
+      // Chart data
       chartData: {
-        labels: ['Red', 'Blue', 'Yellow'], // Labels for segments
+        labels: ['Red', 'Blue', 'Green'],  // Labels for each slice of the pie
         datasets: [
           {
-            data: [300, 50, 100], // Data values for the chart
-            backgroundColor: ['#FF5733', '#3498DB', '#F1C40F'], // Colors for segments
-            hoverBackgroundColor: ['#FF6347', '#5DADE2', '#F39C12']
+            label: 'My Pie Chart',
+            data: [300, 150, 100],  // Values for each slice
+            backgroundColor: ['red', 'blue', 'green'],  // Colors for each slice
+            hoverOffset: 4
           }
         ]
       },
+      // Chart options
       chartOptions: {
-        responsive: true, // Make it responsive
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
-            position: 'top', // Position of the legend
+            position: 'top'
           },
           tooltip: {
-            enabled: true // Enable tooltips
+            callbacks: {
+              label: (tooltipItem) => {
+                return `${tooltipItem.label}: ${tooltipItem.raw} units`
+              }
+            }
           }
         }
       }

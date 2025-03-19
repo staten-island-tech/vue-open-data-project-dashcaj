@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 
-const api = "https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+const api = "https://data.cityofnewyork.us/resource/hjae-yuav.json"
 async function fetchData(api) {
   try {
     const response = await fetch(api);
@@ -16,6 +16,9 @@ async function fetchData(api) {
   }
 }
 fetchData(api);
+
+
+
 
 
 
