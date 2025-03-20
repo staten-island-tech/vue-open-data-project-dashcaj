@@ -23,7 +23,7 @@ export default {
         datasets: [
           {
             label: 'My Pie Chart',
-            data: [300, 150, 100],  // Values for each slice
+            data: [1, 2, 3],  // Values for each slice
             backgroundColor: ['red', 'blue', 'green'],  // Colors for each slice
             hoverOffset: 4
           }
