@@ -10,45 +10,30 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/brooklyn',
-      name: 'brooklyn',
+      path: '/open',
+      name: 'open',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/bkView.vue'),
+      component: () => import('../views/openView.vue'),
     },
     {
-      path: '/bronx',
-      name: 'bronx',
+      path: '/handicap',
+      name: 'handicap',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/bxview.vue'),
+      component: () => import('../views/handicapview.vue'),
     },
     {
-      path: '/queens',
-      name: 'queens',
+      path: '/cards',
+      name: 'cards',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/qview.vue'),
+      component: () => import('../views/cardsview.vue'),
     },
-    {
-      path: '/manhattan',
-      name: 'manhattan',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/mview.vue'),
-    },
-    {
-      path: '/statenisland',
-      name: 'statenisland',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/siview.vue'),
-    },
+    
     
   ],
 })

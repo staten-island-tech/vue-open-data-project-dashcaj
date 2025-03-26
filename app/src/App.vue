@@ -33,11 +33,9 @@ fetchData(api);
 
       <nav>
         <RouterLink to="/">home       </RouterLink>
-        <RouterLink to="/brooklyn">brooklyn      </RouterLink>
-        <RouterLink to="/queens">queens     </RouterLink>
-        <RouterLink to="/bronx">bronx     </RouterLink>
-        <RouterLink to="/manhattan">manhattan     </RouterLink>
-        <RouterLink to="/statenisland">staten island     </RouterLink>
+        <RouterLink to="/open">open parks      </RouterLink>
+        <RouterLink to="/handicap">open vs. accessible    </RouterLink>
+        <RouterLink to="/cards">all handicap accessible    </RouterLink>
       </nav>
 
       <div ></div>
